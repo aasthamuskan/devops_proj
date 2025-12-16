@@ -6,7 +6,7 @@ It demonstrates version control discipline, branching strategy, merge conflict h
 
 ---
 
-## 2. DevOps Objectives
+## 2. DevOps Objectives and implementation
 - Implement structured **Git-based version control**
 - Demonstrate **branching, merging, and conflict resolution**
 - Maintain **clean commit history** with meaningful messages
