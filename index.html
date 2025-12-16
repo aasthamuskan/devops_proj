@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust - Travel Journal</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_KEY&callback=initMap" async defer></script>
+</head>
+
+<body>
+
+<header>
+    <h1><i class="fas fa-globe-americas"></i> Wanderlust</h1>
+    <nav>
+        <ul>
+            <li><a href="#" class="active">Journal</a></li>
+            <li><a href="#gallerySection">Famous Places</a></li>
+            <li><a href="#mapSection">Map</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Capture Your Adventures</h2>
+        <p>Record your travel memories and get AI-powered travel recommendations</p>
+        <button class="btn" id="scrollToNewEntry">Create New Entry</button>
+    </div>
+</section>
+
+<main class="container">
+    <div class="main-layout">
+
+        <!-- Journal -->
+        <section class="journal-entries">
+            <div class="entry-form" id="entryForm">
+                <h3>New Journal Entry</h3>
+                <form id="journalForm">
+                    <input type="text" id="entryTitle" placeholder="Title" required>
+                    <input type="date" id="entryDate" required>
+                    <input type="text" id="entryLocation" placeholder="Location">
+                    <textarea id="entryContent" placeholder="Your Experience" required></textarea>
+
+                    <select id="entryRating">
+                        <option value="5">5 - Amazing</option>
+                        <option value="4">4 - Great</option>
+                        <option value="3" selected>3 - Good</option>
+                        <option value="2">2 - Okay</option>
+                        <option value="1">1 - Poor</option>
+                    </select>
+
+                    <button type="submit" class="btn btn-primary">Save Entry</button>
+                </form>
+            </div>
+
+            <div id="journalEntries">
+                <h3>Your Travel Memories</h3>
+            </div>
+        </section>
+
+        <!-- AI Assistant -->
+        <aside class="sidebar">
+            <div class="ai-assistant">
+                <h3>Travel Assistant</h3>
+                <div class="chat-container" id="chatContainer">
+                    <div class="message bot-message">
+                        Hello traveler! Ask me about destinations, food, or tips.
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userQuestion" placeholder="Ask something...">
+                    <button class="btn" id="askButton">Ask</button>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Gallery -->
+    <section class="gallery-section" id="gallerySection">
+        <h2 class="section-title">Explore India's Wonders</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="assets/images/taj-mahal.jpg" class="gallery-img">
+                <div class="gallery-caption">
+                    <h4>Taj Mahal</h4>
+                    <p>Agra</p>
+                    <button class="btn-small view-on-map" data-lat="27.1751" data-lng="78.0421">View on Map</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map -->
+    <section class="map-section" id="mapSection">
+        <h2 class="section-title">Travel Map</h2>
+        <div class="map-controls">
+            <button class="btn btn-primary" id="showJournalLocations">My Locations</button>
+            <button class="btn" id="showFamousPlaces">Famous Places</button>
+        </div>
+        <div id="map"></div>
+        <div class="map-info-panel" id="locationInfo">
+            Select a location on the map
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Wanderlust Travel Journal</p>
+</footer>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
